@@ -1,0 +1,195 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body, button, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, input, textarea, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, main, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+button, a {
+	cursor: pointer;
+	text-decoration: none;
+}
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+	outline: none;
+	background: inherit;
+	-webkit-tap-highlight-color: transparent; //*prevents the blue!
+}
+input:hover,
+textarea:hover,
+button:hover,
+a:hover {
+	outline: none;
+	// background: inherit; not for the buttons at least
+	-webkit-tap-highlight-color: transparent; 
+}
+input:active,
+textarea:active,
+button:active,
+a:active {
+	outline: none;
+	background: inherit;
+	-webkit-tap-highlight-color: transparent; 
+}
+input:visited,
+textarea:visited,
+button:visited,
+a:visited {
+	outline: none;
+	background: none;
+	-webkit-tap-highlight-color: transparent; 
+}
+
+
+// <---------- Variables ------------>//
+$primary: #ccc;
+$dark: #171717;
+$light: #f3f3f3;
+$drop-shadow: 5px 5px 10px #b8bbbe, 
+				-5px -5px 10px #ffffff;
+
+$inset-shadow: inset 5px 5px 10px #979a9c, 
+				inset -5px -5px 10px #ffffff,
+				5px 5px 10px #b8bbbe, 
+				-5px -5px 10px #ffffff;
+
+$button-color: #ECF0F3;
+
+
+// <---------- Styles: mobile first ------------>//
+
+body {
+	width: 100%;
+	height: 100vh; 
+	background: #fff;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+canvas {
+	background: #fff; 
+	// cursor: url("../img/circle.png") 11 11, auto;
+	width: 100%;
+	height: 100%;
+}
+
+.draw-menu {
+	position: absolute;
+	width: 100%;
+	height: fit-content;
+	bottom: 0;
+	padding: 5px 5px;
+	background: $button-color;
+
+	display: flex;
+	flex-flow: row wrap; justify-content: space-between; align-items: center;
+
+	button {
+		border-radius: 13px;
+		color: $dark;
+		font-weight: bold;
+		margin: 5px 4px;
+		width: 42px;
+		height: 42px;
+		border-radius: 13px;
+		
+		background: linear-gradient(145deg, #d4d8db, #fdffff);
+		box-shadow:  $drop-shadow;
+
+		display: flex; flex-flow: row nowrap; justify-content: center; align-items: center;
+
+		&.active,
+		&:active {
+			border: 2px #f7fafa solid;
+			border: 2px $button-color solid;
+			background: $button-color;
+			box-shadow: $inset-shadow;
+		}	
+	}
+
+	.colors {
+		position: relative;
+		width: fit-content;
+		height: fit-content;
+
+		#color-picker {
+			margin: 5px;
+			padding: 8px;
+			border-radius: 13px;
+			box-shadow: $inset-shadow;
+			border: 3px $button-color solid;
+		}
+	}
+
+	.brushers-wrapper {
+		position: relative;
+		// width: calc(100% - 162px); // -picker width
+		width: 202px; // -picker width
+		display: flex; flex-flow: row wrap; justify-content: center; align-items: center;
+
+		.weight-picker {
+			.pointer {
+				border-radius: 50%;
+				background: #000;
+			}			
+		}
+
+		.eraser {
+			margin-left: 5px;
+		}
+	}
+}
+
+
+@media (min-width: 510px) {
+	canvas {
+		cursor: url("../img/circle.png") 11 11, auto;
+	}
+	
+	.draw-menu {
+		height: 160px;
+		padding: 10px 10px;
+
+		button {
+			margin: 5px 5px;
+			width: 50px;
+			height: 50px;
+		}
+		
+		.colors {
+			#color-picker {
+				padding: 12px;
+				margin: 0 7px;
+			}
+		}
+
+		.brushers-wrapper {	
+			.eraser {
+				margin-left: 25px;
+				// todo: ver como
+				order: 6;
+			}
+		}
+	}
+}

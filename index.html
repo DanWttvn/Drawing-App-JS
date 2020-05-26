@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pinturillo</title>
+	<link rel="stylesheet" href="./assets/css/main.min.css">
+	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36e279864a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<canvas></canvas>
+	<aside class="draw-menu">
+
+		<div class="colors">
+			<div id="color-picker"></div>
+		</div>
+
+		<div class="brushers-wrapper">
+			<!-- al click, me pone en el state el weight y lo code de alli -->
+			<button class="weight-picker" value="3"><div class="pointer" style="width: 3px; height: 3px;"></div></button>
+			<button class="weight-picker" value="6"><div class="pointer" style="width: 6px; height: 6px;"></div></button>
+			<button class="weight-picker active" value="10"><div class="pointer" style="width: 10px; height: 10px;"></div></button>
+			
+			<button class="eraser"><i class="fas fa-eraser"></i></button>
+
+			<button class="weight-picker" value="15"><div class="pointer" style="width: 15px; height: 15px;"></div></button>
+			<button class="weight-picker" value="20"><div class="pointer" style="width: 20px; height: 20px;"></div></button>
+			<button class="weight-picker" value="30"><div class="pointer" style="width: 30px; height: 30px;"></div></button>
+
+			<button class="clear"><i class="fas fa-times"></i></button>
+		</div>
+		
+	</aside>
+
+	<script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
