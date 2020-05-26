@@ -184,7 +184,8 @@ canvas {
 			}
 		}
 
-		.brushers-wrapper {	
+		.brushers-wrapper {
+			width: calc(100% - 170px);
 			.eraser {
 				margin-left: 25px;
 				// todo: ver como
