@@ -185,9 +185,11 @@ canvas {
 		}
 
 		.brushers-wrapper {
-			width: calc(100% - 170px);
-			.eraser {
+			width: calc(100% - 200px);
+			.clear {
 				margin-left: 25px;
+			}
+			.eraser {
 				// todo: ver como
 				order: 6;
 			}
